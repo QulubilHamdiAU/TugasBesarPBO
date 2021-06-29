@@ -6,7 +6,8 @@
 package tampilan;
 
 import mahasiswa.form_pendaftaran;
-
+import mahasiswa.form_ujian;
+import tubespbo.form_Login;
 /**
  *
  * @author LEGION
@@ -174,11 +175,15 @@ public class Home_mahasiswa extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        
+        form_ujian fu = new form_ujian();
+        fu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        form_Login fl = new form_Login();
+        fl.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
