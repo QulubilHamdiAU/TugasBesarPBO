@@ -169,7 +169,7 @@ public class form_pendaftaran extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        next_pendaftaran next = new next_pendaftaran();
+        form_pendaftaran2 next = new form_pendaftaran2();
         next.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
