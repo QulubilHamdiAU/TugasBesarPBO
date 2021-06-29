@@ -5,6 +5,8 @@
  */
 package mahasiswa;
 
+import tampilan.Home_mahasiswa;
+
 /**
  *
  * @author LEGION
