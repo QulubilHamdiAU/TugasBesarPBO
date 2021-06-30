@@ -212,7 +212,7 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
     private void cb_anggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_anggotaActionPerformed
         // TODO add your handling code here:
         Object selectedItem = cb_anggota.getSelectedItem();
-        if (selectedItem.equals("1")){
+        if(selectedItem.equals("1")){
             L_anggota1.setVisible(true);
             B_anggota1.setVisible(true);
             L_anggota2.setVisible(false);
