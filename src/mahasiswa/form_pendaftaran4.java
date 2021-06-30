@@ -64,7 +64,7 @@ public class form_pendaftaran4 extends javax.swing.JFrame {
 
         jLabel8.setText("Nomor Telepon Perusahaan");
 
-        jButton4.setText("NEXT");
+        jButton4.setText("OK");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -185,7 +185,7 @@ public class form_pendaftaran4 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 730, 680));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sahis\\OneDrive\\Documents\\2 SEMESTER\\Pemrograman Berorientasi Objek\\TugasBesarPBO-master\\src\\picture\\umm4.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/umm4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 810));
 
@@ -194,8 +194,8 @@ public class form_pendaftaran4 extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        form_pendaftaran back = new form_pendaftaran();
-        back.setVisible(true);
+        form_pendaftaran3 fp3 = new form_pendaftaran3();
+        fp3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

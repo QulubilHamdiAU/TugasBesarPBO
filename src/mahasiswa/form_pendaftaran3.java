@@ -72,6 +72,11 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
         jLabel8.setText("Nama Dosen pembimbing");
 
         jButton4.setText("NEXT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("BACK");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +222,7 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 730, 680));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hamdi\\NetBeans Projects\\TugasBesarPBO-master\\src\\picture\\umm4.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/umm4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 810));
 
@@ -226,10 +231,16 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        form_pendaftaran back = new form_pendaftaran();
-        back.setVisible(true);
+        form_pendaftaran2 fp2 = new form_pendaftaran2();
+        fp2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        form_pendaftaran4 fp4 = new form_pendaftaran4();
+        fp4.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

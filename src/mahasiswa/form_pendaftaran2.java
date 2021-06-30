@@ -68,6 +68,11 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         jLabel8.setText("Nama Dosen pembimbing");
 
         jButton4.setText("NEXT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("BACK");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +169,7 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 730, 510));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\hamdi\\NetBeans Projects\\TugasBesarPBO-master\\src\\picture\\umm4.jpg")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/umm4.jpg"))); // NOI18N
         jLabel17.setText("jLabel17");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 810));
 
@@ -177,6 +182,13 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         back.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        form_pendaftaran3 fp3 = new form_pendaftaran3();
+        fp3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

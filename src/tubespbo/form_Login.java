@@ -178,7 +178,7 @@ public class form_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LoginActionPerformed
 
     private void btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegisterActionPerformed
-        // TODO add your handling code here:
+        
         form_register reg = new form_register();
         reg.setVisible(true);
         this.dispose();
