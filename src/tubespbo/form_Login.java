@@ -6,7 +6,7 @@
 package tubespbo;
 
 import database.koneksi;
-import tampilan.form_utama;
+import tampilan.Home_admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -168,7 +168,7 @@ public class form_Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
-                form_utama start = new form_utama();
+                Home_admin start = new Home_admin();
                 start.setVisible(true);
                 this.dispose();
             }
