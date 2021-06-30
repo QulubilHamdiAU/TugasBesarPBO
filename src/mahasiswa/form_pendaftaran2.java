@@ -31,22 +31,22 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        L_anggota1 = new javax.swing.JLabel();
+        L_anggota2 = new javax.swing.JLabel();
+        L_anggota3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        L_anggota4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        cb_anggota = new javax.swing.JComboBox<>();
+        B_anggota1 = new javax.swing.JButton();
+        B_anggota2 = new javax.swing.JButton();
+        B_anggota3 = new javax.swing.JButton();
+        B_anggota4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -60,15 +60,15 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Identitas Kelompok");
 
-        jLabel4.setText("Anggota 1 (Ketua)");
+        L_anggota1.setText("Anggota 1 (Ketua)");
 
-        jLabel5.setText("Anggota 2");
+        L_anggota2.setText("Anggota 2");
 
-        jLabel6.setText("Anggota 3");
+        L_anggota3.setText("Anggota 3");
 
         jLabel7.setText("Nama Kelompok");
 
-        jLabel8.setText("Anggota 4");
+        L_anggota4.setText("Anggota 4");
 
         jButton4.setText("NEXT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -91,20 +91,20 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
 
         jLabel9.setText("Jumlah Anggota");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        cb_anggota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cb_anggota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                cb_anggotaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Add File");
+        B_anggota1.setText("Add File");
 
-        jButton2.setText("Add File");
+        B_anggota2.setText("Add File");
 
-        jButton3.setText("Add File");
+        B_anggota3.setText("Add File");
 
-        jButton6.setText("Add File");
+        B_anggota4.setText("Add File");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,20 +126,20 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
+                            .addComponent(L_anggota1)
+                            .addComponent(L_anggota2)
+                            .addComponent(L_anggota3)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel8)
+                            .addComponent(L_anggota4)
                             .addComponent(jLabel9))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton6))))
+                            .addComponent(cb_anggota, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_anggota1)
+                            .addComponent(B_anggota2)
+                            .addComponent(B_anggota3)
+                            .addComponent(B_anggota4))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
         );
@@ -160,25 +160,25 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9))
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_anggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel18)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButton1))
+                    .addComponent(L_anggota1)
+                    .addComponent(B_anggota1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jButton2))
+                    .addComponent(L_anggota2)
+                    .addComponent(B_anggota2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jButton3))
+                    .addComponent(L_anggota3)
+                    .addComponent(B_anggota3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jButton6))
+                    .addComponent(L_anggota4)
+                    .addComponent(B_anggota4))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,9 +209,47 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void cb_anggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_anggotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+        Object selectedItem = cb_anggota.getSelectedItem();
+        if (selectedItem.equals("1")){
+            L_anggota1.setVisible(true);
+            B_anggota1.setVisible(true);
+            L_anggota2.setVisible(false);
+            B_anggota2.setVisible(false);
+            L_anggota3.setVisible(false);
+            B_anggota3.setVisible(false);
+            L_anggota4.setVisible(false);
+            B_anggota4.setVisible(false);
+        } else if(selectedItem.equals("2")){
+            L_anggota1.setVisible(true);
+            B_anggota1.setVisible(true);
+            L_anggota2.setVisible(true);
+            B_anggota2.setVisible(true);
+            L_anggota3.setVisible(false);
+            B_anggota3.setVisible(false);
+            L_anggota4.setVisible(false);
+            B_anggota4.setVisible(false);
+        } else if(selectedItem.equals("3")){
+            L_anggota1.setVisible(true);
+            B_anggota1.setVisible(true);
+            L_anggota2.setVisible(true);
+            B_anggota2.setVisible(true);
+            L_anggota3.setVisible(true);
+            B_anggota3.setVisible(true);
+            L_anggota4.setVisible(false);
+            B_anggota4.setVisible(false);
+        } else if(selectedItem.equals("4")){
+            L_anggota1.setVisible(true);
+            B_anggota1.setVisible(true);
+            L_anggota2.setVisible(true);
+            B_anggota2.setVisible(true);
+            L_anggota3.setVisible(true);
+            B_anggota3.setVisible(true);
+            L_anggota4.setVisible(true);
+            B_anggota4.setVisible(true);
+        }
+    }//GEN-LAST:event_cb_anggotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,24 +294,24 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton B_anggota1;
+    private javax.swing.JButton B_anggota2;
+    private javax.swing.JButton B_anggota3;
+    private javax.swing.JButton B_anggota4;
+    private javax.swing.JLabel L_anggota1;
+    private javax.swing.JLabel L_anggota2;
+    private javax.swing.JLabel L_anggota3;
+    private javax.swing.JLabel L_anggota4;
+    private javax.swing.JComboBox<String> cb_anggota;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField4;
