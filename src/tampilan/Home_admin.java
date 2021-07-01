@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tampilan;
+import Admin.admin_approval;
 import Admin.admin_penilaianPKN;
 import Admin.admin_penjadwalUjian;
 import tubespbo.form_Login;
@@ -186,6 +187,9 @@ public class Home_admin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        admin_approval start = new admin_approval();
+        start.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
