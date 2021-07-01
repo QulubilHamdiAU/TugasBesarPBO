@@ -7,9 +7,14 @@ package mahasiswa;
 
 import database.koneksi_proposal;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -18,8 +23,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author LEGION
  */
 public class form_pendaftaran2 extends javax.swing.JFrame {
-String cv;
+String cv1;
+String cv2;
+String cv3;
+String cv4;
 private Connection conn = new koneksi_proposal().getkoneksi();
+
 
     protected void aktif(){
         NAKEL.setEnabled(true);
@@ -60,8 +69,8 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         jLabel7 = new javax.swing.JLabel();
         L_anggota4 = new javax.swing.JLabel();
         NAKEL = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        daftar2_next = new javax.swing.JButton();
+        daftar2_back = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -93,17 +102,17 @@ private Connection conn = new koneksi_proposal().getkoneksi();
 
         L_anggota4.setText("Anggota 4");
 
-        jButton4.setText("NEXT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        daftar2_next.setText("NEXT");
+        daftar2_next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                daftar2_nextActionPerformed(evt);
             }
         });
 
-        jButton5.setText("BACK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        daftar2_back.setText("BACK");
+        daftar2_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                daftar2_backActionPerformed(evt);
             }
         });
 
@@ -164,9 +173,9 @@ private Connection conn = new koneksi_proposal().getkoneksi();
                     .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(daftar2_back, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(daftar2_next, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(L_anggota1)
@@ -224,8 +233,8 @@ private Connection conn = new koneksi_proposal().getkoneksi();
                     .addComponent(CV4))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(daftar2_next, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(daftar2_back, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -238,19 +247,48 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void daftar2_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftar2_backActionPerformed
         
         form_pendaftaran back = new form_pendaftaran();
         back.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_daftar2_backActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void daftar2_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftar2_nextActionPerformed
         // TODO add your handling code here:
+        String sql = "insert into data_proposal1 values (?,?)";
+        try{
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, NAKEL.getText());
+            stat.setString(2, (String) ANGGOTA.getSelectedItem());
+            stat.executeUpdate();
+            kosong();
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Input Gagal" +e);
+        }
+        String sql2 = "insert into data_cv values (?,?,?,?)";
+        try{
+            PreparedStatement ps;
+            ps  = conn.prepareStatement(sql2);
+            InputStream is1 = new FileInputStream(new File(cv1));
+            InputStream is2 = new FileInputStream(new File(cv2));
+            InputStream is3 = new FileInputStream(new File(cv3));
+            InputStream is4 = new FileInputStream(new File(cv4));
+            ps.setBlob(1,is1);
+            ps.setBlob(2,is2);
+            ps.setBlob(3,is3);
+            ps.setBlob(4,is4);
+            ps.executeUpdate();
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Input Gagal" +e);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(form_pendaftaran2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(null, "Input Berhasil !");
         form_pendaftaran3 fp3 = new form_pendaftaran3();
         fp3.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_daftar2_nextActionPerformed
 
     private void ANGGOTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANGGOTAActionPerformed
         // TODO add your handling code here:
@@ -303,7 +341,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            cv = selectedFile.getAbsolutePath();     
+            cv1 = selectedFile.getAbsolutePath();     
         }else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("Tidak ada yang di pilih.");
         }
@@ -318,7 +356,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            cv = selectedFile.getAbsolutePath();     
+            cv2 = selectedFile.getAbsolutePath();     
         }else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("Tidak ada yang di pilih.");
         }
@@ -333,7 +371,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            cv = selectedFile.getAbsolutePath();     
+            cv3 = selectedFile.getAbsolutePath();     
         }else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("Tidak ada yang di pilih.");
         }
@@ -348,7 +386,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            cv = selectedFile.getAbsolutePath();     
+            cv4 = selectedFile.getAbsolutePath();     
         }else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("Tidak ada yang di pilih.");
         }
@@ -407,8 +445,8 @@ private Connection conn = new koneksi_proposal().getkoneksi();
     private javax.swing.JLabel L_anggota3;
     private javax.swing.JLabel L_anggota4;
     private javax.swing.JTextField NAKEL;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton daftar2_back;
+    private javax.swing.JButton daftar2_next;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
