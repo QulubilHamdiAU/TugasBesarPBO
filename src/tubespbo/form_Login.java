@@ -44,7 +44,7 @@ public class form_Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        EMAIL = new javax.swing.JTextField();
+        NIM = new javax.swing.JTextField();
         btn_Login = new javax.swing.JButton();
         btn_Register = new javax.swing.JButton();
         PASSWORD = new javax.swing.JPasswordField();
@@ -61,13 +61,13 @@ public class form_Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Log in");
 
-        jLabel4.setText("Username");
+        jLabel4.setText("NIM");
 
         jLabel5.setText("Password");
 
-        EMAIL.addActionListener(new java.awt.event.ActionListener() {
+        NIM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EMAILActionPerformed(evt);
+                NIMActionPerformed(evt);
             }
         });
 
@@ -112,9 +112,9 @@ public class form_Login extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(EMAIL)
+                            .addComponent(NIM)
                             .addComponent(PASSWORD, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Login)
@@ -132,7 +132,7 @@ public class form_Login extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(EMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -153,17 +153,17 @@ public class form_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EMAILActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EMAILActionPerformed
+    private void NIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NIMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EMAILActionPerformed
+    }//GEN-LAST:event_NIMActionPerformed
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
         conn = koneksi_login.getkoneksi();
-        String Sql = "SELECT * FROM data_akses WHERE EMAIL=? and PASSWORD=?";
+        String Sql = "SELECT * FROM data_akses WHERE NIM=? and PASSWORD=?";
         try{
             pst = (PreparedStatement)conn.prepareStatement(Sql);
-            pst.setString(1, EMAIL.getText());
+            pst.setString(1, NIM.getText());
             pst.setString(2, PASSWORD.getText());
             rs = pst.executeQuery();
             if(rs.next()){
@@ -173,7 +173,7 @@ public class form_Login extends javax.swing.JFrame {
                 this.dispose();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Username atau Password Salah!","Pesan", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "NIM atau Password Salah!","Pesan", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_LoginActionPerformed
 
@@ -227,7 +227,7 @@ public class form_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField EMAIL;
+    private javax.swing.JTextField NIM;
     private javax.swing.JPasswordField PASSWORD;
     private javax.swing.JButton btn_Login;
     private javax.swing.JButton btn_Register;

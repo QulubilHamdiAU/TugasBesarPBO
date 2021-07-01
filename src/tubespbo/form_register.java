@@ -28,7 +28,7 @@ private Connection conn = new koneksi_login().getkoneksi();
         PASSWORD.setEnabled(true);
         RE_PASSWORD.setEnabled(true);
         ALAMAT.setEnabled(true);
-        EMAIL.requestFocus();
+        NIM.requestFocus();
     }
     
     protected void kosong(){
@@ -270,7 +270,7 @@ private Connection conn = new koneksi_login().getkoneksi();
             stat.executeUpdate();
             JOptionPane.showMessageDialog(null, "Register Berhasil !");
             kosong();
-            EMAIL.requestFocus();
+            NIM.requestFocus();
             form_Login start = new form_Login();
             start.setVisible(true);
             this.dispose();
