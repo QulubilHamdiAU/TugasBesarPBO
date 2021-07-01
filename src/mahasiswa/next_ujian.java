@@ -6,6 +6,7 @@
 package mahasiswa;
 
 import javax.swing.JOptionPane;
+import tampilan.Home_mahasiswa;
 
 /**
  *
@@ -129,7 +130,7 @@ public class next_ujian extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(75, 75, 75)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(122, 122, 122))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 440, 455));
@@ -143,6 +144,9 @@ public class next_ujian extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null,"DATA DISIMPAN");
+        Home_mahasiswa start = new Home_mahasiswa();
+        start.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

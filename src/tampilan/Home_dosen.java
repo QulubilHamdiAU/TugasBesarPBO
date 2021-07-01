@@ -60,8 +60,9 @@ public class Home_dosen extends javax.swing.JFrame {
 
         jLabel4.setText("Jadwal Ujian");
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
-        jButton2.setText("KELUAR");
+        jButton2.setText("LOG OUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

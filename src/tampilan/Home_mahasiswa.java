@@ -82,9 +82,9 @@ public class Home_mahasiswa extends javax.swing.JFrame {
 
         jLabel8.setText("Pendaftaran Ujian");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 0, 0));
-        jButton3.setText("Log Out");
+        jButton3.setText("LOG OUT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -154,7 +154,7 @@ public class Home_mahasiswa extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(63, 63, 63)
                 .addComponent(jButton3)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 710, 530));
