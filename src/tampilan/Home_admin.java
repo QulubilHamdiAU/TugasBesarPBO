@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tampilan;
+import Admin.admin_penilaianPKN;
 import Admin.admin_penjadwalUjian;
 
 /**
@@ -70,6 +71,11 @@ public class Home_admin extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icon - Copy (4) (1).png"))); // NOI18N
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icon - Copy (3) (1).png"))); // NOI18N
@@ -184,6 +190,13 @@ public class Home_admin extends javax.swing.JFrame {
         start.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        admin_penilaianPKN start = new admin_penilaianPKN();
+        start.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
