@@ -36,17 +36,17 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         L_anggota3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         L_anggota4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        NAKEL = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cb_anggota = new javax.swing.JComboBox<>();
-        B_anggota1 = new javax.swing.JButton();
-        B_anggota2 = new javax.swing.JButton();
-        B_anggota3 = new javax.swing.JButton();
-        B_anggota4 = new javax.swing.JButton();
+        ANGGOTA = new javax.swing.JComboBox<>();
+        CV1 = new javax.swing.JButton();
+        CV2 = new javax.swing.JButton();
+        CV3 = new javax.swing.JButton();
+        CV4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -91,20 +91,20 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
 
         jLabel9.setText("Jumlah Anggota");
 
-        cb_anggota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        cb_anggota.addActionListener(new java.awt.event.ActionListener() {
+        ANGGOTA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        ANGGOTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_anggotaActionPerformed(evt);
+                ANGGOTAActionPerformed(evt);
             }
         });
 
-        B_anggota1.setText("Add File");
+        CV1.setText("Add File");
 
-        B_anggota2.setText("Add File");
+        CV2.setText("Add File");
 
-        B_anggota3.setText("Add File");
+        CV3.setText("Add File");
 
-        B_anggota4.setText("Add File");
+        CV4.setText("Add File");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,12 +134,12 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_anggota, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B_anggota1)
-                            .addComponent(B_anggota2)
-                            .addComponent(B_anggota3)
-                            .addComponent(B_anggota4))))
+                            .addComponent(NAKEL, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ANGGOTA, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CV1)
+                            .addComponent(CV2)
+                            .addComponent(CV3)
+                            .addComponent(CV4))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
         );
@@ -157,28 +157,28 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NAKEL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9))
-                    .addComponent(cb_anggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ANGGOTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel18)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_anggota1)
-                    .addComponent(B_anggota1))
+                    .addComponent(CV1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_anggota2)
-                    .addComponent(B_anggota2))
+                    .addComponent(CV2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_anggota3)
-                    .addComponent(B_anggota3))
+                    .addComponent(CV3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_anggota4)
-                    .addComponent(B_anggota4))
+                    .addComponent(CV4))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,47 +209,47 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void cb_anggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_anggotaActionPerformed
+    private void ANGGOTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANGGOTAActionPerformed
         // TODO add your handling code here:
-        Object selectedItem = cb_anggota.getSelectedItem();
+        Object selectedItem = ANGGOTA.getSelectedItem();
         if(selectedItem.equals("1")){
             L_anggota1.setVisible(true);
-            B_anggota1.setVisible(true);
+            CV1.setVisible(true);
             L_anggota2.setVisible(false);
-            B_anggota2.setVisible(false);
+            CV2.setVisible(false);
             L_anggota3.setVisible(false);
-            B_anggota3.setVisible(false);
+            CV3.setVisible(false);
             L_anggota4.setVisible(false);
-            B_anggota4.setVisible(false);
+            CV4.setVisible(false);
         } else if(selectedItem.equals("2")){
             L_anggota1.setVisible(true);
-            B_anggota1.setVisible(true);
+            CV1.setVisible(true);
             L_anggota2.setVisible(true);
-            B_anggota2.setVisible(true);
+            CV2.setVisible(true);
             L_anggota3.setVisible(false);
-            B_anggota3.setVisible(false);
+            CV3.setVisible(false);
             L_anggota4.setVisible(false);
-            B_anggota4.setVisible(false);
+            CV4.setVisible(false);
         } else if(selectedItem.equals("3")){
             L_anggota1.setVisible(true);
-            B_anggota1.setVisible(true);
+            CV1.setVisible(true);
             L_anggota2.setVisible(true);
-            B_anggota2.setVisible(true);
+            CV2.setVisible(true);
             L_anggota3.setVisible(true);
-            B_anggota3.setVisible(true);
+            CV3.setVisible(true);
             L_anggota4.setVisible(false);
-            B_anggota4.setVisible(false);
+            CV4.setVisible(false);
         } else if(selectedItem.equals("4")){
             L_anggota1.setVisible(true);
-            B_anggota1.setVisible(true);
+            CV1.setVisible(true);
             L_anggota2.setVisible(true);
-            B_anggota2.setVisible(true);
+            CV2.setVisible(true);
             L_anggota3.setVisible(true);
-            B_anggota3.setVisible(true);
+            CV3.setVisible(true);
             L_anggota4.setVisible(true);
-            B_anggota4.setVisible(true);
+            CV4.setVisible(true);
         }
-    }//GEN-LAST:event_cb_anggotaActionPerformed
+    }//GEN-LAST:event_ANGGOTAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,15 +294,16 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton B_anggota1;
-    private javax.swing.JButton B_anggota2;
-    private javax.swing.JButton B_anggota3;
-    private javax.swing.JButton B_anggota4;
+    private javax.swing.JComboBox<String> ANGGOTA;
+    private javax.swing.JButton CV1;
+    private javax.swing.JButton CV2;
+    private javax.swing.JButton CV3;
+    private javax.swing.JButton CV4;
     private javax.swing.JLabel L_anggota1;
     private javax.swing.JLabel L_anggota2;
     private javax.swing.JLabel L_anggota3;
     private javax.swing.JLabel L_anggota4;
-    private javax.swing.JComboBox<String> cb_anggota;
+    private javax.swing.JTextField NAKEL;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -314,6 +315,5 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

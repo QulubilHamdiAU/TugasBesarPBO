@@ -79,12 +79,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField4" alignment="0" min="-2" pref="425" max="-2" attributes="0"/>
-                              <Component id="cb_anggota" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="B_anggota1" min="-2" max="-2" attributes="0"/>
-                              <Component id="B_anggota2" min="-2" max="-2" attributes="0"/>
-                              <Component id="B_anggota3" min="-2" max="-2" attributes="0"/>
-                              <Component id="B_anggota4" min="-2" max="-2" attributes="0"/>
+                              <Component id="NAKEL" alignment="0" min="-2" pref="425" max="-2" attributes="0"/>
+                              <Component id="ANGGOTA" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="CV1" min="-2" max="-2" attributes="0"/>
+                              <Component id="CV2" min="-2" max="-2" attributes="0"/>
+                              <Component id="CV3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CV4" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -107,34 +107,34 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NAKEL" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="cb_anggota" min="-2" max="-2" attributes="0"/>
+                      <Component id="ANGGOTA" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L_anggota1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="B_anggota1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CV1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L_anggota2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="B_anggota2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CV2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L_anggota3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="B_anggota3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CV3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L_anggota4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="B_anggota4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CV4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -188,7 +188,7 @@
             <Property name="text" type="java.lang.String" value="Anggota 4"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="NAKEL">
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
@@ -224,7 +224,7 @@
             <Property name="text" type="java.lang.String" value="Jumlah Anggota"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cb_anggota">
+        <Component class="javax.swing.JComboBox" name="ANGGOTA">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -236,28 +236,28 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_anggotaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ANGGOTAActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="B_anggota1">
+        <Component class="javax.swing.JButton" name="CV1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="B_anggota2">
+        <Component class="javax.swing.JButton" name="CV2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="B_anggota3">
+        <Component class="javax.swing.JButton" name="CV3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="B_anggota4">
+        <Component class="javax.swing.JButton" name="CV4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
