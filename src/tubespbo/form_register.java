@@ -271,9 +271,13 @@ private Connection conn = new koneksi().getkoneksi();
             JOptionPane.showMessageDialog(null, "Register Berhasil !");
             kosong();
             EMAIL.requestFocus();
+            form_Login start = new form_Login();
+            start.setVisible(true);
+            this.dispose();
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Register Gagal" +e);
         }
+        
     }//GEN-LAST:event_BTN_DAFTARActionPerformed
 
     private void BTN_BATALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BATALActionPerformed

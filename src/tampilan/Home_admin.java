@@ -6,6 +6,7 @@
 package tampilan;
 import Admin.admin_penilaianPKN;
 import Admin.admin_penjadwalUjian;
+import tubespbo.form_Login;
 
 /**
  *
@@ -178,6 +179,9 @@ public class Home_admin extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        form_Login start = new form_Login();
+        start.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
