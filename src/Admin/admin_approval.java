@@ -5,6 +5,8 @@
  */
 package Admin;
 
+import tampilan.Home_admin;
+
 /**
  *
  * @author hamdi
@@ -110,6 +112,11 @@ public class admin_approval extends javax.swing.JFrame {
         jButton7.setText("NEXT");
 
         jButton8.setText("BACK");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Save");
 
@@ -186,6 +193,13 @@ public class admin_approval extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        Home_admin start = new Home_admin();
+        start.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

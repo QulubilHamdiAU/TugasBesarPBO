@@ -5,6 +5,8 @@
  */
 package Admin;
 
+import tampilan.Home_admin;
+
 /**
  *
  * @author LEGION
@@ -105,7 +107,12 @@ public class admin_penjadwalUjian extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton5.setText("KELUAR");
+        jButton5.setText("KEMBALI");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(jTextPane1);
 
@@ -240,6 +247,13 @@ public class admin_penjadwalUjian extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Home_admin start = new Home_admin();
+        start.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
