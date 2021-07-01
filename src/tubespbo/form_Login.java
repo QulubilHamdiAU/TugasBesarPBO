@@ -5,7 +5,7 @@
  */
 package tubespbo;
 
-import database.koneksi;
+import database.koneksi_login;
 import tampilan.Home_admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -159,7 +159,7 @@ public class form_Login extends javax.swing.JFrame {
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
-        conn = koneksi.getkoneksi();
+        conn = koneksi_login.getkoneksi();
         String Sql = "SELECT * FROM data_akses WHERE EMAIL=? and PASSWORD=?";
         try{
             pst = (PreparedStatement)conn.prepareStatement(Sql);

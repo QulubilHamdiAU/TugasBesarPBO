@@ -71,7 +71,15 @@ public class admin_approval extends javax.swing.JFrame {
             new String [] {
                 "CV Anggota 1(Ketua)", "CV Anggota 2", "CV Anggota 3", "CV Anggota 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(jTable3);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -103,9 +111,16 @@ public class admin_approval extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane2.setViewportView(jTable2);

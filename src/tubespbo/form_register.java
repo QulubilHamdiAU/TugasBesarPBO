@@ -5,7 +5,7 @@
  */
 package tubespbo;
 
-import database.koneksi;
+import database.koneksi_login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class form_register extends javax.swing.JFrame {
 
-private Connection conn = new koneksi().getkoneksi();
+private Connection conn = new koneksi_login().getkoneksi();
     
     
     protected void aktif(){

@@ -7,22 +7,22 @@ package database;
 
 /**
  *
- * @author LEGION
+ * @author hamdi
  */
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class koneksi {
+public class koneksi_ujian {
     private static Connection koneksi;
     public static Connection getkoneksi(){
-        //membuat koneksi ke database
+        //membuat koneksi_login ke database
         if(koneksi==null){
             try{
                 String url = new String();
                 String user = new String();
                 String password = new String();
-                url = "jdbc:mysql://localhost:3306/db_data_akses";
+                url = "jdbc:mysql://localhost:3306/db_ujian";
                 user = "root";
                 password = "";
                 
@@ -35,6 +35,4 @@ public class koneksi {
         }
         return koneksi;
     }
- }
-
-
+}
