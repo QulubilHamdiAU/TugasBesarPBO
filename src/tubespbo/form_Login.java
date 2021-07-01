@@ -6,7 +6,7 @@
 package tubespbo;
 
 import database.koneksi;
-import tampilan.form_utama;
+import tampilan.Home_admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,7 +48,6 @@ public class form_Login extends javax.swing.JFrame {
         btn_Login = new javax.swing.JButton();
         btn_Register = new javax.swing.JButton();
         PASSWORD = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,10 +146,6 @@ public class form_Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 510, 320));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\sahis\\OneDrive\\Pictures\\online-2-.png")); // NOI18N
-        jLabel6.setText("jLabel5");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 98, -1));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/umm4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1025, 806));
@@ -173,7 +168,7 @@ public class form_Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
-                form_utama start = new form_utama();
+                Home_admin start = new Home_admin();
                 start.setVisible(true);
                 this.dispose();
             }
@@ -241,7 +236,6 @@ public class form_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
