@@ -246,21 +246,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CV1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CV2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CV2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CV3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CV3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CV4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add File"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CV4ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

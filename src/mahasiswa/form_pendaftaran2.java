@@ -5,12 +5,35 @@
  */
 package mahasiswa;
 
+import database.koneksi_proposal;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author LEGION
  */
 public class form_pendaftaran2 extends javax.swing.JFrame {
+String cv;
+private Connection conn = new koneksi_proposal().getkoneksi();
 
+    protected void aktif(){
+        NAKEL.setEnabled(true);
+        ANGGOTA.setEnabled(true);
+        CV1.setEnabled(true);
+        CV2.setEnabled(true);
+        CV3.setEnabled(true);
+        CV4.setEnabled(true);
+    }
+    
+    protected void kosong(){
+        NAKEL.setText("");
+    }
+    
     /**
      * Creates new form next_pendaftaran
      */
@@ -99,12 +122,32 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
         });
 
         CV1.setText("Add File");
+        CV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CV1ActionPerformed(evt);
+            }
+        });
 
         CV2.setText("Add File");
+        CV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CV2ActionPerformed(evt);
+            }
+        });
 
         CV3.setText("Add File");
+        CV3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CV3ActionPerformed(evt);
+            }
+        });
 
         CV4.setText("Add File");
+        CV4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CV4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -250,6 +293,66 @@ public class form_pendaftaran2 extends javax.swing.JFrame {
             CV4.setVisible(true);
         }
     }//GEN-LAST:event_ANGGOTAActionPerformed
+
+    private void CV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CV1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        fileChooser.addChoosableFileFilter(filter);
+        int result = fileChooser.showSaveDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            cv = selectedFile.getAbsolutePath();     
+        }else if(result == JFileChooser.CANCEL_OPTION){
+            System.out.println("Tidak ada yang di pilih.");
+        }
+    }//GEN-LAST:event_CV1ActionPerformed
+
+    private void CV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CV2ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        fileChooser.addChoosableFileFilter(filter);
+        int result = fileChooser.showSaveDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            cv = selectedFile.getAbsolutePath();     
+        }else if(result == JFileChooser.CANCEL_OPTION){
+            System.out.println("Tidak ada yang di pilih.");
+        }
+    }//GEN-LAST:event_CV2ActionPerformed
+
+    private void CV3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CV3ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        fileChooser.addChoosableFileFilter(filter);
+        int result = fileChooser.showSaveDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            cv = selectedFile.getAbsolutePath();     
+        }else if(result == JFileChooser.CANCEL_OPTION){
+            System.out.println("Tidak ada yang di pilih.");
+        }
+    }//GEN-LAST:event_CV3ActionPerformed
+
+    private void CV4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CV4ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        fileChooser.addChoosableFileFilter(filter);
+        int result = fileChooser.showSaveDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            cv = selectedFile.getAbsolutePath();     
+        }else if(result == JFileChooser.CANCEL_OPTION){
+            System.out.println("Tidak ada yang di pilih.");
+        }
+    }//GEN-LAST:event_CV4ActionPerformed
 
     /**
      * @param args the command line arguments
