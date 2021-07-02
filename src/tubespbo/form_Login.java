@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import tampilan.Home_dosen;
+import tampilan.Home_mahasiswa;
 
 /**
  *
@@ -167,10 +169,22 @@ public class form_Login extends javax.swing.JFrame {
             pst.setString(2, PASSWORD.getText());
             rs = pst.executeQuery();
             if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
-                Home_admin start = new Home_admin();
-                start.setVisible(true);
-                this.dispose();
+                if(NIM.getText().equals("admin")){
+                    JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
+                    Home_admin start = new Home_admin();
+                    start.setVisible(true);
+                    this.dispose();
+                } else if(NIM.getText().equals("dosen")){
+                    JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
+                    Home_dosen start = new Home_dosen();
+                    start.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Anda Berhasil Login");
+                    Home_mahasiswa start = new Home_mahasiswa();
+                    start.setVisible(true);
+                    this.dispose();
+                }                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "NIM atau Password Salah!","Pesan", JOptionPane.ERROR_MESSAGE);
