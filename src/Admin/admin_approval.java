@@ -5,6 +5,11 @@
  */
 package Admin;
 
+import database.koneksi_proposal;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import tampilan.Home_admin;
 
 /**
@@ -18,8 +23,82 @@ public class admin_approval extends javax.swing.JFrame {
      */
     public admin_approval() {
         initComponents();
+        load_table();
+        load_table2();
+        load_table3();
     }
 
+    private void load_table(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Nama Kelompok");
+        model.addColumn("Jumlah Anggota");       
+       
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no = 1;
+            String sql = "select * from data_proposal1";
+            java.sql.Connection conn=(Connection)koneksi_proposal.getkoneksi();
+            java.sql.Statement stm=conn.createStatement();
+            java.sql.ResultSet res=stm.executeQuery(sql);
+            while(res.next()){
+                model.addRow(new Object[]{res.getString(1),res.getString(2)});
+            }
+            jTable2.setModel(model);
+        } catch (Exception e) {
+        }
+    }
+    
+    private void load_table2(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("CV Anggota 1(Ketua)");
+        model.addColumn("CV Anggota 2");
+        model.addColumn("CV Anggota 3");
+        model.addColumn("CV Anggota 4");
+       
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no = 1;
+            String sql = "select * from data_cv";
+            java.sql.Connection conn=(Connection)koneksi_proposal.getkoneksi();
+            java.sql.Statement stm=conn.createStatement();
+            java.sql.ResultSet res=stm.executeQuery(sql);
+            while(res.next()){
+                model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4)});
+            }
+            jTable3.setModel(model);
+        } catch (Exception e) {
+        }
+    }
+    
+    private void load_table3(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Nama Perusahaan");
+        model.addColumn("Alamat Perusahaan");
+        model.addColumn("Nomor Telepon Perusahaan");
+        model.addColumn("Tanggal Pelaksanaan Awal");
+        model.addColumn("Tanggal Pelaksanaan Akhir");
+       
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no = 1;
+            String sql = "select * from data_proposal2";
+            java.sql.Connection conn=(Connection)koneksi_proposal.getkoneksi();
+            java.sql.Statement stm=conn.createStatement();
+            java.sql.ResultSet res=stm.executeQuery(sql);
+            while(res.next()){
+                model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});
+            }
+            jTable1.setModel(model);
+        } catch (Exception e) {
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,16 +119,17 @@ public class admin_approval extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +153,7 @@ public class admin_approval extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -133,19 +213,32 @@ public class admin_approval extends javax.swing.JFrame {
         });
 
         jButton2.setText("Decline");
-
-        jButton3.setText("See File");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
         jButton4.setText("Approve");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Edit");
+        jButton5.setText("Decline");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("NEXT");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("BACK");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -153,8 +246,6 @@ public class admin_approval extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-
-        jButton9.setText("Save");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("DATA PERUSAHAAN");
@@ -166,6 +257,27 @@ public class admin_approval extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("DATA KELOMPOK");
+
+        jButton3.setText("Decline");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Approve");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Refresh Table");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,11 +294,11 @@ public class admin_approval extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButton10)
+                                    .addGap(18, 18, 18)
                                     .addComponent(jButton8)
                                     .addGap(18, 18, 18)
                                     .addComponent(jButton7))
@@ -197,11 +309,14 @@ public class admin_approval extends javax.swing.JFrame {
                                         .addComponent(jButton2))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1)
-                                    .addComponent(jButton3)
                                     .addComponent(jScrollPane3))
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButton6)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jButton3))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -231,7 +346,9 @@ public class admin_approval extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -239,12 +356,12 @@ public class admin_approval extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton9))
+                    .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(jButton8)
+                    .addComponent(jButton10))
                 .addContainerGap())
         );
 
@@ -265,11 +382,149 @@ public class admin_approval extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "Approve Data?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable2.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_proposal1 where NAKEL ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Data berhasil diapprove", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Data gagal di approve" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Data gagal di approve", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "Data Akan di Decline", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable2.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_proposal1 where NAKEL ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Data berhasil di decline", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Data gagal di decline" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Data gagal di decline", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "CV Akan di Decline", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable3.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_cv where CV1 ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "CV berhasil di decline", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "CV gagal di decline" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "CV gagal di decline", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "Approve CV?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable3.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_cv where CV1 ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "CV berhasil diapprove", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "CV gagal di approve" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "CV gagal di approve", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+        DefaultTableModel model2 = (DefaultTableModel)jTable3.getModel();
+        DefaultTableModel model3 = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        model2.setRowCount(0);
+        model3.setRowCount(0);
+        load_table();
+        load_table2();
+        load_table3();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "Approve Data?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable1.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_proposal2 where N_PERUSAHAAN ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Data berhasil diapprove", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Data gagal di approve" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Data gagal di approve", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Connection conn = koneksi_proposal.getkoneksi();
+        int confirm = JOptionPane.showConfirmDialog(null, "Data Akan di Decline", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (confirm == 0) {
+            
+            try {
+                int row = jTable1.getSelectedRow();
+                java.sql.PreparedStatement stmt = conn.prepareStatement("delete from data_proposal2 where N_PERUSAHAAN ="+row);
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Data berhasil di decline", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+                                
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Data gagal di decline" + e.getMessage(), "Pesan", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Data gagal di decline", "Pesan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        admin_approval2 start = new admin_approval2();
+        start.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,13 +563,14 @@ public class admin_approval extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

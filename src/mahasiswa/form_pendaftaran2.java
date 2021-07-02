@@ -336,7 +336,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("pdf file(.pdf)", "pdf");
         fileChooser.addChoosableFileFilter(filter);
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
@@ -351,7 +351,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("pdf file(.pdf)", "pdf");
         fileChooser.addChoosableFileFilter(filter);
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
@@ -366,7 +366,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("pdf file(.pdf)", "pdf");
         fileChooser.addChoosableFileFilter(filter);
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){
@@ -381,7 +381,7 @@ private Connection conn = new koneksi_proposal().getkoneksi();
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg file(.jpg)", "jpg");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("pdf file(.pdf)", "pdf");
         fileChooser.addChoosableFileFilter(filter);
         int result = fileChooser.showSaveDialog(null);
         if(result == JFileChooser.APPROVE_OPTION){

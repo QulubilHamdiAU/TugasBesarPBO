@@ -5,6 +5,8 @@
  */
 package mahasiswa;
 
+import java.awt.Desktop;
+import java.net.URL;
 import javax.swing.JOptionPane;
 import tampilan.Home_mahasiswa;
 
@@ -60,7 +62,7 @@ public class next_ujian extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel6.setText("Upload Laporan");
 
-        jButton1.setText("SUBMIT");
+        jButton1.setText("NEXT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -151,10 +153,22 @@ public class next_ujian extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try{
+           Desktop.getDesktop().browse(new URL("https://drive.google.com/drive/folders/1OFehQZl4XDBnrrvfeFkAjaVO0IOiEJK4?usp=sharing").toURI());            
+        }
+        catch(Exception e){
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        try{
+           Desktop.getDesktop().browse(new URL("https://drive.google.com/drive/folders/1Pk1kQkuUxeV6NOEWRi87SSrakemB19xX?usp=sharing").toURI());            
+        }
+        catch(Exception e){
+            
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
