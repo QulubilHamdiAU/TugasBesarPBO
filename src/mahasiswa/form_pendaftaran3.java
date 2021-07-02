@@ -5,12 +5,38 @@
  */
 package mahasiswa;
 
+import database.koneksi_proposal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hamdi
  */
 public class form_pendaftaran3 extends javax.swing.JFrame {
 
+private Connection conn = new koneksi_proposal().getkoneksi();
+private String tgl;
+private String tgl2;
+
+    protected void aktif(){
+        N_PERUSAHAAN.setEnabled(true);
+        A_PERUSAHAAN.setEnabled(true);
+        TELP_PERUSAHAAN.setEnabled(true);
+    }
+    
+    protected void kosong(){
+        N_PERUSAHAAN.setText("");
+        A_PERUSAHAAN.setText("");
+        TELP_PERUSAHAAN.setText("");
+        TGL_AWAL.setDateFormatString("");
+        TGL_AKHIR.setDateFormatString("");
+    }
+    
+    
     /**
      * Creates new form form_pendaftaran4
      */
@@ -40,14 +66,15 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
         N_PERUSAHAAN = new javax.swing.JTextField();
         A_PERUSAHAAN = new javax.swing.JTextField();
         TELP_PERUSAHAAN = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_next = new javax.swing.JButton();
+        btn_back = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        TGL_AWAL = new com.toedter.calendar.JDateChooser();
+        TGL_AKHIR = new com.toedter.calendar.JDateChooser();
+        btn_submit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,17 +101,23 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
 
         jLabel8.setText("Nomor Telepon Perusahaan");
 
-        jButton4.setText("OK");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        N_PERUSAHAAN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                N_PERUSAHAANActionPerformed(evt);
             }
         });
 
-        jButton5.setText("BACK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_next.setText("OK");
+        btn_next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_nextActionPerformed(evt);
+            }
+        });
+
+        btn_back.setText("BACK");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backActionPerformed(evt);
             }
         });
 
@@ -97,13 +130,32 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
 
         jLabel20.setText("Hingga");
 
+        TGL_AWAL.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                TGL_AWALPropertyChange(evt);
+            }
+        });
+
+        TGL_AKHIR.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                TGL_AKHIRPropertyChange(evt);
+            }
+        });
+
+        btn_submit.setText("SUBMIT");
+        btn_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_submitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -125,21 +177,24 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
                                         .addComponent(N_PERUSAHAAN, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(TELP_PERUSAHAAN, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel20))
-                                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TGL_AWAL, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jLabel20)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(TGL_AKHIR, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(121, 121, 121)
+                                        .addComponent(btn_next, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel9)
                             .addComponent(jLabel7)
                             .addComponent(jLabel5)
                             .addComponent(jLabel19))
-                        .addGap(40, 40, 40))))
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_submit)
+                        .addGap(274, 274, 274))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,14 +232,15 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel18)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(33, 33, 33))
+                    .addComponent(TGL_AWAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TGL_AKHIR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(btn_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_next, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 730, 650));
@@ -195,16 +251,57 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
 
         form_pendaftaran2 fp2 = new form_pendaftaran2();
         fp2.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btn_backActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        
+    }//GEN-LAST:event_btn_nextActionPerformed
+
+    private void btn_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submitActionPerformed
+        // TODO add your handling code here:
+        String sql = "insert into data_proposal2 values (?,?,?,?,?)";
+        try{
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, N_PERUSAHAAN.getText());
+            stat.setString(2, A_PERUSAHAAN.getText());
+            stat.setString(3, TELP_PERUSAHAAN.getText());
+            stat.setString(4, tgl);
+            stat.setString(5, tgl2);
+                
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Submit Data Perusahaan Berhasil !");
+            kosong();            
+            btn_submit.setVisible(false);
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Submit Data Gagal" +e);
+        }
+    }//GEN-LAST:event_btn_submitActionPerformed
+
+    private void N_PERUSAHAANActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N_PERUSAHAANActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_N_PERUSAHAANActionPerformed
+
+    private void TGL_AWALPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TGL_AWALPropertyChange
+        // TODO add your handling code here:
+        if(TGL_AWAL.getDate()!=null){
+            SimpleDateFormat format_tanggal = new SimpleDateFormat("yyyy-MM-dd");
+            tgl = format_tanggal.format(TGL_AWAL.getDate());
+        }
+    }//GEN-LAST:event_TGL_AWALPropertyChange
+
+    private void TGL_AKHIRPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TGL_AKHIRPropertyChange
+        // TODO add your handling code here:
+        if(TGL_AKHIR.getDate()!=null){
+            SimpleDateFormat format_tanggal2 = new SimpleDateFormat("yyyy-MM-dd");
+            tgl2 = format_tanggal2.format(TGL_AKHIR.getDate());
+        }
+    }//GEN-LAST:event_TGL_AKHIRPropertyChange
 
     /**
      * @param args the command line arguments
@@ -276,10 +373,11 @@ public class form_pendaftaran3 extends javax.swing.JFrame {
     private javax.swing.JTextField A_PERUSAHAAN;
     private javax.swing.JTextField N_PERUSAHAAN;
     private javax.swing.JTextField TELP_PERUSAHAAN;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser TGL_AKHIR;
+    private com.toedter.calendar.JDateChooser TGL_AWAL;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_next;
+    private javax.swing.JButton btn_submit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
