@@ -28,7 +28,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="60" width="730" height="650"/>
+          <AbsoluteConstraints x="150" y="60" width="730" height="650"/>
         </Constraint>
       </Constraints>
 
@@ -39,10 +39,6 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
@@ -86,6 +82,10 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="btn_submit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -170,7 +170,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Form Pengajuan Surat Pengantar PKN"/>
+            <Property name="text" type="java.lang.String" value="Form Pengajuan Proposal PKN"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">

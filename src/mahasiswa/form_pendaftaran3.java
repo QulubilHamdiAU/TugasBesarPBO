@@ -88,7 +88,7 @@ private String tgl2;
         jLabel7.setText("2. Tempat PKN dinilai layak jika sesuai dengan bidang keahlian yang dipilih Mahasiswa");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setText("Form Pengajuan Surat Pengantar PKN");
+        jLabel2.setText("Form Pengajuan Proposal PKN");
 
         jLabel9.setText("3. Tempat pelakasanaan PKN dapat di perusahaan, industri, atau instuisi");
 
@@ -158,9 +158,6 @@ private String tgl2;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(168, 168, 168))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -194,7 +191,10 @@ private String tgl2;
                         .addGap(40, 40, 40))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_submit)
-                        .addGap(274, 274, 274))))
+                        .addGap(274, 274, 274))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(193, 193, 193))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +243,7 @@ private String tgl2;
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 730, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 730, 650));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/umm4.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 810));
@@ -252,7 +252,7 @@ private String tgl2;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-
+        // TODO add your handling code here:
         form_pendaftaran2 fp2 = new form_pendaftaran2();
         fp2.setVisible(true);
         this.dispose();
@@ -260,7 +260,9 @@ private String tgl2;
 
     private void btn_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextActionPerformed
         // TODO add your handling code here:
-        
+        form_pendaftaran_final fpf = new form_pendaftaran_final();
+        fpf.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_nextActionPerformed
 
     private void btn_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submitActionPerformed
